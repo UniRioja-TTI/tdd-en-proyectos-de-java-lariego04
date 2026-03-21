@@ -3,6 +3,7 @@ package com.tt1.test;
 /**
  * Representa una tarea pendiente (ToDo) con su información básica:
  * nombre, descripción, fecha límite y estado de completado.
+ * (esta cambio aparecerá tras crear la acción en "javadoc.yml")
  */
 public class ToDo {
 
