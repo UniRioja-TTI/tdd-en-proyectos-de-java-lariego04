@@ -3,6 +3,7 @@ package com.tt1.test;
 /**
  * Repositorio encargado de gestionar el acceso a los datos de las tareas.
  * Actúa como intermediario entre el servicio y la base de datos simulada.
+ * (este cambio debería verse tras añadir "javadoc.yml")
  */
 public class Repositorio {
 
