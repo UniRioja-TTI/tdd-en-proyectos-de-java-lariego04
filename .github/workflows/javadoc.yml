@@ -1,0 +1,35 @@
+name: Publicar JavaDoc
+
+on:
+  push:
+    branches:
+      - stable
+
+jobs:
+  javadoc:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Generar JavaDoc
+        run: javadoc -d docs -sourcepath src/main/java -subpackages com.tt1.test
+
+      - name: Subir artefacto de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Desplegar en GitHub Pages
+        uses: actions/deploy-pages@v4
